@@ -7,31 +7,31 @@ The purpose of this project is to design and create a system that could sample a
 
 ![](https://i.imgur.com/1ghAA0w.png)
 
-Fig 1: Hardware diagram, showing how the hardware is connected together.
+**Fig 1:** Hardware diagram, showing how the hardware is connected together.
 
 &nbsp;
 
 ![](https://i.imgur.com/sqQ1SUX.png)
 
-Fig 2: Transmission timing diagram. The CLK line is free-running. The DAT line idles high. Transmission begins with a start pulse (low), followed by 8 bits of data (LSB first). After the final bit is sent, the DAT line is pulled low by the STM32 board to acknowledge reception of the data, then the DAT returns to idle state.
+**Fig 2:** Transmission timing diagram. The CLK line is free-running. The DAT line idles high. Transmission begins with a start pulse (low), followed by 8 bits of data (LSB first). After the final bit is sent, the DAT line is pulled low by the STM32 board to acknowledge reception of the data, then the DAT returns to idle state.
 
 &nbsp;
 
 ![](https://i.imgur.com/fovzi5e.png)
 
-Fig 3: QNX system state transmission diagram.
+**Fig 3:** QNX system state transmission diagram.
 
 &nbsp;
 
 ![](https://i.imgur.com/MhCYObq.png)
 
-Fig 4: STM32 board state transition diagram.
+**Fig 4:** STM32 board state transition diagram.
 
 &nbsp;
 
 ![](https://i.imgur.com/GXAzDuq.png)
 
-Fig 5: The voltage signals gets read by the ADC which is stored in a buffer ready to be sent over to the microcontroller. The microcontroller reads the data into the buffer, which gets copied over to data when the transmission complete. The data is then used to set the appropriate duty cycle to drive the servo.
+**Fig 5:** The voltage signals gets read by the ADC which is stored in a buffer ready to be sent over to the microcontroller. The microcontroller reads the data into the buffer, which gets copied over to data when the transmission complete. The data is then used to set the appropriate duty cycle to drive the servo.
 
 
 ## Operation
@@ -51,4 +51,4 @@ Visible features:
 
 ![](https://i.imgur.com/wrRfT8Z.png)
 
-Fig 6: Transmission of the value 0x94, which tells the STM32 board to move the servo to 148°. Ch. 1 (Yellow) is the CLK line, ch. 2 (blue) is the DAT line. Note the start pulse (the first low bit on DAT following the idle period), and that data is sampled at each rising edge of the CLK.
+**Fig 6:** Transmission of the value 0x94, which tells the STM32 board to move the servo to 148°. Ch. 1 (Yellow) is the CLK line, ch. 2 (blue) is the DAT line. Note the start pulse (the first low bit on DAT following the idle period), and that data is sampled at each rising edge of the CLK.
